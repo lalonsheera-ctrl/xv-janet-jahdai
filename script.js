@@ -3,7 +3,7 @@
    ========================================================= */
 const CONFIG = {
   // Número con código de país, sin "+", espacios ni guiones (México = 52)
-  whatsapp: "5651300206",
+  whatsapp: "52 5651300206",
   mensaje: "¡Hola! Confirmo mi asistencia a los XV años de Janet Jahdai.",
 
   // Sábado 12 de diciembre de 2026, 6:30 p.m. hora del centro de México (UTC-6).
