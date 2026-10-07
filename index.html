@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FBF8F3">
+  <title>XV años de Janet Jahdai</title>
+  <meta name="description" content="Te invito a celebrar mis XV años. Sábado 12 de diciembre de 2026, Salón Apocalipsis VIP.">
+
+  <!-- Vista previa al compartir el link (WhatsApp, Facebook).
+       Si el repositorio tiene otro nombre, cambia "xv-janet-jahdai" en las dos URLs de abajo. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="XV años de Janet Jahdai">
+  <meta property="og:description" content="Sábado 12 de diciembre de 2026. Acompáñame en mi gran día.">
+  <meta property="og:image" content="https://lalonsheera-ctrl.github.io/xv-janet-jahdai/assets/preview.jpg">
+  <meta property="og:url" content="https://lalonsheera-ctrl.github.io/xv-janet-jahdai/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.49.0/dist/tabler-icons-300.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Adorno floral reutilizable -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="flor" viewBox="0 0 120 24">
+      <path d="M0 12 H44 M76 12 H120" stroke="currentColor" stroke-width="0.8"/>
+      <path d="M44 12 C40 6 34 6 30 9 C34 13 40 14 44 12 Z M76 12 C80 6 86 6 90 9 C86 13 80 14 76 12 Z" fill="currentColor" opacity="0.55"/>
+      <g fill="currentColor">
+        <ellipse cx="60" cy="6.5" rx="3" ry="5"/>
+        <ellipse cx="60" cy="17.5" rx="3" ry="5"/>
+        <ellipse cx="54.5" cy="12" rx="5" ry="3"/>
+        <ellipse cx="65.5" cy="12" rx="5" ry="3"/>
+      </g>
+      <circle cx="60" cy="12" r="2.4" fill="#FBF8F3"/>
+    </symbol>
+  </svg>
+
+  <audio id="musica" src="./assets/musica.mp3" preload="none" loop></audio>
+
+  <main class="invitacion">
+
+    <!-- 1. Portada -->
+    <section class="portada" id="portada">
+      <i class="ti ti-crown portada__corona" aria-hidden="true"></i>
+      <p class="portada__xv">XV años</p>
+      <h1 class="portada__nombre">Janet Jahdai</h1>
+      <figure class="arco portada__foto">
+        <img src="./assets/foto-hero.jpg" alt="Ilustración de Janet Jahdai con su vestido lila" width="960" height="1200">
+      </figure>
+      <button class="boton boton--contorno" id="botonMusica" type="button" aria-pressed="false">
+        <i class="ti ti-music" aria-hidden="true"></i>
+        <span>Clic para reproducir</span>
+      </button>
+    </section>
+
+    <!-- 2. Mensaje -->
+    <section class="seccion">
+      <p class="mensaje">Mis 15 años son más que una cifra... son el reflejo del amor y los momentos compartidos con mi familia. Hoy, gracias a mis padres y a todas las personas que han sido parte de mi vida, celebro este día tan especial.</p>
+      <h2 class="cursiva cursiva--grande">15 Años</h2>
+    </section>
+
+    <!-- 3. Padres -->
+    <section class="seccion">
+      <figure class="arco arco--chico">
+        <img src="./assets/foto-padres.jpg" alt="Ilustración de los padres de Janet" width="960" height="1200" loading="lazy">
+      </figure>
+      <h2 class="cursiva">Con el amor de mis padres</h2>
+      <p class="nombres">Juan Ramírez<br>Xochitl Jiménez</p>
+      <svg class="adorno" aria-hidden="true"><use href="#flor"/></svg>
+      <p class="cursiva cursiva--suave">Dejo un mundo atrás y entro a uno nuevo.</p>
+    </section>
+
+    <!-- 4. Fecha y cuenta regresiva -->
+    <section class="seccion seccion--lila">
+      <p class="fecha__dia">Sábado</p>
+      <p class="fecha__numero">12</p>
+      <p class="fecha__mes">Diciembre 2026</p>
+      <div class="contador" role="timer" aria-label="Tiempo restante para la fiesta">
+        <div class="contador__caja"><span class="contador__valor" id="dias">00</span><span class="contador__etiqueta">Días</span></div>
+        <div class="contador__caja"><span class="contador__valor" id="horas">00</span><span class="contador__etiqueta">Horas</span></div>
+        <div class="contador__caja"><span class="contador__valor" id="minutos">00</span><span class="contador__etiqueta">Min</span></div>
+        <div class="contador__caja"><span class="contador__valor" id="segundos">00</span><span class="contador__etiqueta">Seg</span></div>
+      </div>
+    </section>
+
+    <!-- 5. Ceremonia y recepción -->
+    <section class="seccion">
+      <div class="evento">
+        <i class="ti ti-building-church icono" aria-hidden="true"></i>
+        <h2 class="cursiva">Acción de gracias</h2>
+        <p class="evento__dato">6:30 p.m.</p>
+        <p class="evento__lugar">Lugar por confirmar</p>
+        <!-- Cuando tengas la iglesia: cambia el texto de arriba, pega el link de Maps y quita el atributo "hidden" -->
+        <a class="boton boton--contorno" href="https://maps.app.goo.gl/" target="_blank" rel="noopener" hidden>
+          <i class="ti ti-map-pin" aria-hidden="true"></i><span>Ver ubicación</span>
+        </a>
+      </div>
+
+      <svg class="adorno" aria-hidden="true"><use href="#flor"/></svg>
+
+      <div class="evento">
+        <i class="ti ti-glass-full icono" aria-hidden="true"></i>
+        <h2 class="cursiva">Recepción</h2>
+        <p class="evento__dato">7:00 p.m.</p>
+        <p class="evento__lugar">Salón Apocalipsis VIP</p>
+        <a class="boton boton--relleno" href="https://maps.app.goo.gl/Jpe4EmvgY9TF2E5s9" target="_blank" rel="noopener">
+          <i class="ti ti-map-pin" aria-hidden="true"></i><span>Ver ubicación</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 6. Cronograma -->
+    <section class="seccion">
+      <h2 class="cursiva">Cronograma</h2>
+      <ol class="cronograma">
+        <li><time>6:30 p.m.</time><span>Acción de gracias</span></li>
+        <li><time>7:00 p.m.</time><span>Acceso al salón</span></li>
+        <!-- Para agregar más momentos copia una línea, por ejemplo:
+        <li><time>8:00 p.m.</time><span>Entrada de la quinceañera</span></li>
+        -->
+      </ol>
+    </section>
+
+    <!-- 7. Vestimenta y regalos -->
+    <section class="seccion">
+      <div class="evento">
+        <i class="ti ti-hanger icono" aria-hidden="true"></i>
+        <h2 class="cursiva">Código de vestimenta</h2>
+        <p class="evento__dato">Formal</p>
+        <p class="nota">Los colores lila y morado están reservados para la quinceañera.</p>
+      </div>
+
+      <svg class="adorno" aria-hidden="true"><use href="#flor"/></svg>
+
+      <div class="evento">
+        <i class="ti ti-gift icono" aria-hidden="true"></i>
+        <h2 class="cursiva">Regalos</h2>
+        <p class="texto">Tu presencia es mi mejor regalo. Si deseas tener un detalle conmigo, el regalo es libre y también habrá lluvia de sobres.</p>
+      </div>
+    </section>
+
+    <!-- 8. Confirmación -->
+    <section class="seccion seccion--final">
+      <p class="texto">Prepárate para una noche llena de magia y luz. ¡Confirma tu asistencia y acompáñame en mi gran día!</p>
+      <a class="boton boton--relleno" id="botonWhatsapp" href="https://wa.me/" target="_blank" rel="noopener">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i><span>Confirmar asistencia</span>
+      </a>
+      <p class="cursiva cursiva--cierre">No faltes. ¡Te espero!</p>
+    </section>
+
+  </main>
+
+  <!-- Control de música que aparece al bajar -->
+  <button class="musica-flotante" id="musicaFlotante" type="button" aria-label="Reproducir música" aria-pressed="false" hidden>
+    <i class="ti ti-music" aria-hidden="true"></i>
+  </button>
+
+  <script src="./script.js"></script>
+</body>
+</html>
