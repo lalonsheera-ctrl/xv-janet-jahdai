@@ -44,17 +44,22 @@
 
     <!-- 1. Portada -->
     <section class="portada" id="portada">
-      <i class="ti ti-crown portada__corona" aria-hidden="true"></i>
-      <p class="portada__xv">XV años</p>
-      <h1 class="portada__nombre">Janet Jahdai</h1>
+      <div class="portada__titulo halo">
+        <i class="ti ti-crown portada__corona" aria-hidden="true"></i>
+        <p class="portada__xv">XV años</p>
+        <h1 class="portada__nombre">Janet Jahdai</h1>
+      </div>
       <figure class="arco portada__foto">
         <img src="./assets/foto-hero.jpg" alt="Ilustración de Janet Jahdai con su vestido lila" width="960" height="1200">
       </figure>
-      <button class="boton boton--contorno" id="botonMusica" type="button" aria-pressed="false">
+      <button class="boton boton--contorno velo" id="botonMusica" type="button" aria-pressed="false">
         <i class="ti ti-music" aria-hidden="true"></i>
         <span>Clic para reproducir</span>
       </button>
     </section>
+
+    <!-- Del mensaje en adelante, todo va sobre la tarjeta translúcida -->
+    <div class="tarjeta">
 
     <!-- 2. Mensaje -->
     <section class="seccion">
@@ -86,17 +91,12 @@
       </div>
     </section>
 
-    <!-- 5. Ceremonia y recepción -->
+    <!-- 5. Ceremonia y recepción (mismo lugar) -->
     <section class="seccion">
       <div class="evento">
         <i class="ti ti-building-church icono" aria-hidden="true"></i>
         <h2 class="cursiva">Acción de gracias</h2>
-        <p class="evento__dato">6:30 p.m.</p>
-        <p class="evento__lugar">Lugar por confirmar</p>
-        <!-- Cuando tengas la iglesia: cambia el texto de arriba, pega el link de Maps y quita el atributo "hidden" -->
-        <a class="boton boton--contorno" href="https://maps.app.goo.gl/" target="_blank" rel="noopener" hidden>
-          <i class="ti ti-map-pin" aria-hidden="true"></i><span>Ver ubicación</span>
-        </a>
+        <p class="evento__dato">6:20 p.m.</p>
       </div>
 
       <svg class="adorno" aria-hidden="true"><use href="#flor"/></svg>
@@ -105,18 +105,19 @@
         <i class="ti ti-glass-full icono" aria-hidden="true"></i>
         <h2 class="cursiva">Recepción</h2>
         <p class="evento__dato">7:00 p.m.</p>
-        <p class="evento__lugar">Salón Apocalipsis VIP</p>
-        <a class="boton boton--relleno" href="https://maps.app.goo.gl/Jpe4EmvgY9TF2E5s9" target="_blank" rel="noopener">
-          <i class="ti ti-map-pin" aria-hidden="true"></i><span>Ver ubicación</span>
-        </a>
       </div>
+
+      <p class="evento__lugar evento__lugar--comun">Ambos en el Salón Apocalipsis VIP</p>
+      <a class="boton boton--relleno" href="https://maps.app.goo.gl/Jpe4EmvgY9TF2E5s9" target="_blank" rel="noopener">
+        <i class="ti ti-map-pin" aria-hidden="true"></i><span>Ver ubicación</span>
+      </a>
     </section>
 
     <!-- 6. Cronograma -->
     <section class="seccion">
       <h2 class="cursiva">Cronograma</h2>
       <ol class="cronograma">
-        <li><time>6:30 p.m.</time><span>Acción de gracias</span></li>
+        <li><time>6:20 p.m.</time><span>Acción de gracias</span></li>
         <li><time>7:00 p.m.</time><span>Acceso al salón</span></li>
         <!-- Para agregar más momentos copia una línea, por ejemplo:
         <li><time>8:00 p.m.</time><span>Entrada de la quinceañera</span></li>
@@ -151,6 +152,7 @@
       <p class="cursiva cursiva--cierre">No faltes. ¡Te espero!</p>
     </section>
 
+    </div>
   </main>
 
   <!-- Control de música que aparece al bajar -->

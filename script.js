@@ -6,16 +6,16 @@ const CONFIG = {
   whatsapp: "525651300206",
   mensaje: "¡Hola! Confirmo mi asistencia a los XV años de Janet Jahdai.",
 
-  // Sábado 12 de diciembre de 2026, 6:30 p.m. hora del centro de México (UTC-6).
+  // Sábado 12 de diciembre de 2026, 6:20 p.m. hora del centro de México (UTC-6).
   // Se expresa en UTC para que la cuenta sea exacta desde cualquier país.
-  fechaEvento: Date.UTC(2026, 11, 13, 0, 30, 0)
+  fechaEvento: Date.UTC(2026, 11, 13, 0, 20, 0)
 };
 
 /* ===== WhatsApp ===== */
 (function () {
   const boton = document.getElementById("botonWhatsapp");
   if (!boton) return;
-  boton.href = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(CONFIG.mensaje);
+  boton.href = "https://wa.me/" + CONFIG.whatsapp.replace(/\D/g, "") + "?text=" + encodeURIComponent(CONFIG.mensaje);
 })();
 
 /* ===== Cuenta regresiva ===== */

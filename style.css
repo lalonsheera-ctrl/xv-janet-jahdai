@@ -24,7 +24,7 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--lila);
+  background: var(--crema);
   color: var(--texto);
   font-family: var(--serif);
   font-size: 16px;
@@ -34,21 +34,47 @@ body {
 
 [hidden] { display: none !important; }
 
+/* Fondo fijo de linternas al 70% de opacidad.
+   Va en un elemento fijo (y no con background-attachment) porque iPhone no soporta fondos fijos. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("./assets/fondo.jpg") center / cover no-repeat;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
 h1, h2, p, figure, ol { margin: 0; }
 img { display: block; max-width: 100%; height: auto; }
 
 /* ===== Contenedor tipo tarjeta (móvil a pantalla completa) ===== */
 .invitacion {
+  position: relative;
   max-width: 480px;
   margin: 0 auto;
-  background: var(--crema);
-  min-height: 100vh;
+}
+
+/* Velo translúcido: la tarjeta de contenido y los elementos de la portada */
+.tarjeta,
+.velo {
+  background: rgba(251, 248, 243, 0.62);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.tarjeta {
+  margin-top: 28px;
+  border-radius: 24px;
   overflow: hidden;
 }
 
+/* En celular el fondo se asoma por los lados y arriba */
+body { padding: 28px 14px; }
+
 @media (min-width: 560px) {
-  body { padding: 32px 0; }
-  .invitacion { border-radius: 24px; min-height: auto; }
+  body { padding: 40px 0; }
 }
 
 /* ===== Secciones ===== */
@@ -58,7 +84,7 @@ img { display: block; max-width: 100%; height: auto; }
   border-bottom: 0.5px solid #E4DAF0;
 }
 
-.seccion--lila { background: var(--lila-claro); }
+.seccion--lila { background: rgba(239, 232, 247, 0.7); }
 .seccion--final { border-bottom: none; padding-bottom: 72px; }
 
 /* ===== Tipografía ===== */
@@ -99,10 +125,32 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* ===== Portada ===== */
 .portada {
-  padding: 56px 28px 52px;
+  min-height: calc(100vh - 56px);
+  min-height: calc(100svh - 56px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 8px 0;
   text-align: center;
-  border-bottom: 0.5px solid #E4DAF0;
 }
+
+.portada__titulo { padding: 0 8px; }
+
+/* Halo crema pegado al contorno de las letras y la corona:
+   el fondo se ve entre y alrededor de las letras */
+.halo .portada__corona,
+.halo .portada__xv,
+.halo .portada__nombre {
+  text-shadow:
+    0 0 1px rgba(251, 248, 243, 0.95),
+    0 0 4px rgba(251, 248, 243, 0.9),
+    0 0 10px rgba(251, 248, 243, 0.75),
+    0 0 22px rgba(251, 248, 243, 0.45);
+}
+
+.halo .portada__xv { font-weight: 500; color: var(--morado-profundo); }
 
 .portada__corona { font-size: 34px; color: var(--morado); }
 
@@ -124,6 +172,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 /* Arco para las fotos */
+.portada .arco { width: 78%; margin: 0; outline-color: rgba(251, 248, 243, 0.85); }
+
 .arco {
   width: 82%;
   margin: 28px auto 0;
@@ -147,10 +197,8 @@ img { display: block; max-width: 100%; height: auto; }
 /* Entrada de la portada: el único momento animado */
 @media (prefers-reduced-motion: no-preference) {
   .portada > * { animation: aparecer 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
-  .portada > :nth-child(2) { animation-delay: 0.15s; }
-  .portada > :nth-child(3) { animation-delay: 0.3s; }
-  .portada > :nth-child(4) { animation-delay: 0.5s; }
-  .portada > :nth-child(5) { animation-delay: 0.75s; }
+  .portada > :nth-child(2) { animation-delay: 0.25s; }
+  .portada > :nth-child(3) { animation-delay: 0.5s; }
 }
 
 @keyframes aparecer {
@@ -182,6 +230,10 @@ img { display: block; max-width: 100%; height: auto; }
 
 .boton--contorno { background: transparent; color: var(--morado-profundo); }
 .boton--contorno:hover { background: var(--lila-claro); }
+
+/* Botón de música de la portada: con velo y sin margen extra */
+.portada .boton { margin-top: 0; background: rgba(251, 248, 243, 0.62); }
+.portada .boton:hover { background: rgba(251, 248, 243, 0.85); }
 
 .boton--relleno { background: var(--morado-profundo); border-color: var(--morado-profundo); color: var(--crema); }
 .boton--relleno:hover { background: var(--texto); }
@@ -234,6 +286,7 @@ img { display: block; max-width: 100%; height: auto; }
 /* ===== Eventos ===== */
 .evento__dato { font-size: 17px; margin-top: 6px; }
 .evento__lugar { font-size: 15px; color: var(--texto-suave); }
+.evento__lugar--comun { margin-top: 32px; font-size: 16px; }
 
 /* ===== Cronograma ===== */
 .cronograma {
